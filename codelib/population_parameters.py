@@ -2,46 +2,49 @@ import numpy as np
 from typing import Union
 
 
-def beregn_middelvaerdi(x: np.ndarray, probs: Union[np.ndarray, None] = None, axis=0) -> Union[float, np.ndarray]:
+def calculate_mean(x: np.ndarray, probs: Union[np.ndarray, None]=None, axis=0) -> Union[float, np.ndarray]:
+
     """
-    Beregn (vægtet) middelværdi af et datasæt x
+    Calculates (weighted) mean af a datasæt x
 
     Parameters
     ----------
     x:
-        Datasæt
+        Data to calculate mean for
     probs:
-        Udfaldssandsynligheder
+        Probabilities
     axis:
-        Akse for hvilken middelvaerdien beregnes over
+        Axis over which to calculate over
 
     Returns
     -------
     Union[float, np.ndarray]
-        Middelvaerdi
+        Mean
 
     """
 
     m = np.average(x, weights=probs, axis=axis)
+
     return m
 
-def beregn_kovarians_mat(x: np.ndarray, probs: Union[np.ndarray, None] = None, axis = 0) -> Union[float, np.ndarray]:
+def calculate_cov_mat(x: np.ndarray, probs: np.ndarray, axis: int = 0) -> np.ndarray:
+
     """
-    Beregn (vægtet) kovarains matrice af et datasæt x
+    Estimates a covariance matrix based on a historical dataset and a set of probabilities.
 
     Parameters
     ----------
     x:
-        Datasæt
+        The dataset to estimate covariance for.
     probs:
-        Udfaldssandsynligheder
+        The probabilities to weight the observations of the dataset by.
     axis:
-        Akse for hvilken covarians matricen beregnes over
+        The axis to estimate over.
 
     Returns
     -------
-    Union[float, np.ndarray]
-        Kovarians matrice
+    np.ndarray
+        The estimated covariance matrix.
 
     """
 
@@ -78,3 +81,16 @@ def calculate_variance(x: np.ndarray, probs: Union[np.ndarray, None] = None, axi
     m = np.average(x, weights=probs, axis=axis)
 
     return np.average(np.square(x - m), weights=probs)
+
+
+# FUNCTIONS:
+# other estimators later ie. exponential decay
+
+#FUNCTIONS:
+
+# calculate rolling mean returns
+# calculate rolling cov matrices
+# calculate rolling volatilities
+# other relevant input parameters?
+
+

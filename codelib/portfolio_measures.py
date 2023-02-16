@@ -57,3 +57,6 @@ def portfolio_mean(weights: np.ndarray, mu: np.ndarray) -> float:
     """
 
     return weights @ mu
+
+
+# evolution of wealth

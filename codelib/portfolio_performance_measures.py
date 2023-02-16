@@ -26,3 +26,14 @@ def sharpe_ratio(weights: np.ndarray, mu: np.ndarray, cov_mat: np.ndarray, rf: f
     var = weights @ cov_mat @ weights
 
     return - (mean - rf) / np.sqrt(var)
+
+# FUNCTIONS:
+# annulized excess return
+# annulized volatility
+# sharpe ratio
+# maximum drawdown
+# # diversificaiton ratio
+# # information ratio?
+# # turnover
+
+# risk factors: MRC and TRC
