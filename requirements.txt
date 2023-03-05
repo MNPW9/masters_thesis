@@ -3,3 +3,4 @@ pandas-datareader~=0.10.0
 yfinance~=0.2.4
 matplotlib~=3.5.3
 scipy~=1.9.1
+array-to-latex==0.83
